@@ -12,7 +12,7 @@ var logo;
 var waitress;
 
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(windowWidth,windowHeight);
   
   imageMode(CENTER);
   rectMode(CENTER);
@@ -22,7 +22,7 @@ function setup() {
   
   tint(200, 0, 200);
   
-  waitress = millis() + 10000; 
+  waitress = millis() + 10000;
 }
 
 function draw() {
