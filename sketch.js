@@ -17,8 +17,7 @@ function setup() {
   rectMode(CENTER);
   
   logoImage = loadImage("assets/dvd-logo-white-on-black.png");
-  // logoImage = loadImage("assets/dvd-heavy-hands-black.png");
-  logo = new ScreensaverLogo(logoImage, 6);
+  logo = new ScreensaverLogo(logoImage);
   
   tint(200, 0, 200);
 }
@@ -41,7 +40,7 @@ var ScreensaverLogo = function(logo, v) {
   that.position = createVector(logo.width/2, logo.height/2);
   
   //default velocity to 0.9
-  v = (typeof v === 'undefined') ? 0.9 : v;
+  v = (typeof v === 'undefined') ? 1.0 : v;
   that.velocity = createVector(v, v);
   
   //changes color each time it hits a boundary
