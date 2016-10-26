@@ -9,6 +9,7 @@ var BACKGROUND_COLOR = 0;
  
 var logoImage;
 var logo;
+var waitress;
 
 function setup() {
   createCanvas(640, 480);
@@ -20,6 +21,8 @@ function setup() {
   logo = new ScreensaverLogo(logoImage);
   
   tint(200, 0, 200);
+  
+  waitress = millis() + 10000; 
 }
 
 function draw() {
@@ -102,4 +105,16 @@ var ScreensaverLogo = function(logo, v) {
     // fill(200, 200, 200, 100);
     // rect(that.position.x, that.position.y, that.logo.width, that.logo.height);
   };
+}
+
+function windowResized() {
+  waitress = millis() + 2000;
+  if (fullscreen()) {
+    resizeCanvas(displayWidth, displayHeight);
+  } else {
+    resizeCanvas(windowWidth,windowHeight);
+  }
+  cursor();  
+  showing = true;
+  background(0);
 }
